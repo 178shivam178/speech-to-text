@@ -1,8 +1,8 @@
-import os
 from flask import Flask, render_template, request, redirect, url_for, make_response, session, Response, jsonify
 from flask_session import Session
 import requests
-from datetime import timedelta
+import os
+from datetime import timedelta 
 from dotenv import load_dotenv 
 
 load_dotenv()
@@ -10,7 +10,7 @@ load_dotenv()
 app = Flask(__name__)
 app.config['SESSION_TYPE'] = 'filesystem'
 Session(app)
-app.secret_key = 'ShivamSTT@17818'
+app.secret_key = 'Shivam@17818'
 
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(hours=12)
 
@@ -19,7 +19,7 @@ API_URL = os.getenv('API_URL')
 def call_api_request():
     try:
         response = requests.get(API_URL, verify=False)
-        response.raise_for_status()
+        response.raise_for_status() 
         return response.json()
     except requests.exceptions.RequestException as e:
         print(f"API request failed: {e}")
@@ -40,11 +40,9 @@ def page_not_found(e):
 def handle_error(error):
     return make_response(jsonify({'error': error.description}), error.code)
 
-users = [
-    {'username': 'Shivam', 'password': 'Shivam@12345'},
-    {'username': 'stt_demo', 'password': 'sttdemo@123!@#'},
-    {'username': 'TeamLead', 'password': 'Team@123!@#'}
-]
+  
+users = [{'username': 'Shivam', 'password': 'Shivam@12345'}, {'username': 'Anand', 'password': 'Anand@12345'},
+{'username': 'stt_demo', 'password': 'sttdemo@123!@#'},{'username': 'TeamLead', 'password': 'Team@123!@#'}]
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():

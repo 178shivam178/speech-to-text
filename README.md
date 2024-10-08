@@ -36,7 +36,10 @@ This project leverages **Azure's Speech-to-Text** service, tailored specifically
 This project assists **healthcare professionals** by providing an **efficient** and **accurate** way to convert speech into text, particularly using specialized **medical vocabulary**. This can improve the speed and accuracy of documentation, making healthcare workflows more efficient.
 
 ---
-
+![Login Image](login.png)
+---
+![stt Image](home.png)
+---
 ### How to Use:
 1. **Setup Azure Speech-to-Text API**  
    Obtain your **Subscription Key**, **Endpoint ID**, and ensure you are using the correct **Region**.
