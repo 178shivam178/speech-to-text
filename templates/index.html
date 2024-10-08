@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Speech to Text Engine</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="icon" href="../static/img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+  <div class="container">
+    <!-- Top Banner -->
+    <div class="jumbotron">
+      <h1 class="display-4">Speech To Text Engine</h1>
+    </div>
+
+    <!-- Content Area -->
+    <div id="content">
+      <!-- Text Area for User Input -->
+      <div class="form-group">
+        <label for="phraseDiv">Generated Text:</label>
+        <textarea id="phraseDiv" class="form-control" rows="5"></textarea>
+      </div>
+
+      <!-- Buttons for User Interaction -->
+      <div class="text-center">
+        <button id="startRecognizeOnceAsyncButton" class="btn btn-success">Start Recognition</button>
+        <button id="stopRecognizeOnceAsyncButton" class="btn btn-danger">Stop Recognition</button>
+        <button id="clearButton" class="btn btn-primary">Clear</button>
+        <a id="logoutButton" class="btn btn-warning" href="{{ url_for('logout') }}">Logout</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Include Bootstrap JavaScript and jQuery scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://aka.ms/csspeech/jsbrowserpackageraw"></script>
+  <script src = "/static/js/script.js"></script>
+</body>
+</html>

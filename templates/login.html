@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="icon" href="../static/img/favicon.ico" type="image/x-icon">
+</head>
+<body style="background-color: #f0f0f0;"> <!-- Set the background color for the entire page -->
+  <div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+      <div class="card" style="width: 400px; background-color: #fff;"> <!-- Set the card background color -->
+        <img src="../static/img/DpImage.jpeg" alt="MyHealthcare Image" class="card-img-top" style="max-height: 150px; margin: 0 auto; width: 200px; height: 100px;">
+        <div class="card-body">
+          <h4 class="card-title text-center">Speech to Text Engine</h4>
+          <form method="POST">
+            <div class="form-group">
+              <label for="username">Username:</label>
+              <input type="text" name="username" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="password">Password:</label>
+              <div class="input-group">
+                <input type="password" name="password" class="form-control" id="passwordInput" required>
+                <div class="input-group-append">
+                  <span class="input-group-text">
+                    <input type="checkbox" id="showPassword"> Show Password
+                  </span>
+                </div>
+              </div>
+            </div>
+            {% if error %}
+              <p class="text-danger text-center">{{ error }}</p>
+            {% endif %}
+            <button type="submit" class="btn btn-primary btn-block" style="background-color: #007BFF;">Login</button> <!-- Set the button background color and width to match the card -->
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const passwordInput = document.getElementById("passwordInput");
+    const showPasswordCheckbox = document.getElementById("showPassword");
+
+    showPasswordCheckbox.addEventListener("change", () => {
+      passwordInput.type = showPasswordCheckbox.checked ? "text" : "password";
+    });
+  </script>
+</body>
+</html>
